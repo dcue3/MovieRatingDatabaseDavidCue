@@ -4,8 +4,8 @@ import java.util.List;
 public interface MovieRankingInterface {
   
 	// Fields for the class
-	private MovieReaderInterface<MovieInterface> MovieReaderDW; 
-	private RedBlackTreeInterface<Value> RedBlackTreeAE;   
+	//private MovieReaderInterface<MovieInterface> MovieReaderDW; 
+	//private RedBlackTreeInterface<Value> RedBlackTreeAE;   
 	
 	// Constructors
 		// public MovieRankingInterface()         
