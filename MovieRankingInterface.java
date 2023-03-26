@@ -13,10 +13,10 @@ public interface MovieRankingInterface {
 	
 	// Methods
         public void loadMoviesList(String filename) throws FileNotFoundException;  
-        public List<MovieInterface> getMoviesByRating(double x, double y);
+        public String getMoviesByRating(double x, double y);
         public void addMovie(String name, double rating, String directorName, int runtime, int year);
         public void removeByRating(double rating);
-        public List<MovieInterface> printAllMovies();
+        public String printAllMovies();
 	public String getData();
         public void clear();
 
