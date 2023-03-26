@@ -12,13 +12,11 @@ public interface MovieRankingInterface {
 		// public MovieRankingInterface(int maxSize)
 	
 	// Methods
-	public void loadMoviesList(String filename) throws FileNotFoundException;	
-	public double getRating(String name);
-	public int getRank(String name);
-	public void addMovie(String name);
-	public void removeMovie(String name);
-	public int findYear(String name);
-	public List<MovieInterface> printAllMovie();
-	public void clear();
+        public void loadMoviesList(String filename) throws FileNotFoundException;  
+        public List<MovieInterface> getMoviesByRating(double x, double y);
+        public void addMovie(String name, double rating, String directorName, int runtime, int year);
+        public void removeByRating(double rating);
+        public List<MovieInterface> printAllMovies();
+        public void clear();
 
 }
