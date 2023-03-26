@@ -7,5 +7,6 @@ public interface MovieInterface {
     public int getRuntime();
     public Double getRating();
     public String getDirectorName();
-    
+    public int compareTo(double rating);
+    public int compareTo(MovieInterface movie);    
 }
