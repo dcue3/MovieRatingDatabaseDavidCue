@@ -17,6 +17,7 @@ public interface MovieRankingInterface {
         public void addMovie(String name, double rating, String directorName, int runtime, int year);
         public void removeByRating(double rating);
         public List<MovieInterface> printAllMovies();
+	public String getData();
         public void clear();
 
 }
