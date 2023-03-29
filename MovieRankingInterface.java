@@ -8,16 +8,15 @@ public interface MovieRankingInterface {
 	//private RedBlackTreeInterface<Value> RedBlackTreeAE;   
 	
 	// Constructors
-		// public MovieRankingInterface()         
-		// public MovieRankingInterface(int maxSize)
+	    // public MovieRankingInterface(MovieReaderInterface MovieReader, RedBlackTreeInterface<MovieInterface> RBT)         
 	
 	// Methods
-        public void loadMoviesList(String filename) throws FileNotFoundException;  
-        public String getMoviesByRating(double x, double y);
-        public void addMovie(String name, double rating, String directorName, int runtime, int year);
-        public void removeByRating(double rating);
-        public String printAllMovies();
-	public String getData();
-        public void clear();
+	public void loadMoviesList(String filename) throws FileNotFoundException;  
+    	public String getMoviesByRating(double x, double y);
+    	public void addMovie(String name, double rating, String directorName, int runtime, int year);
+   	public void removeByRatingRange(double x, double y);
+    	public String printAllMovies();
+    	public void clear();
+    	public String getData();
 
 }
