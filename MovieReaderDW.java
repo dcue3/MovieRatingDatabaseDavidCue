@@ -1,3 +1,12 @@
+// --== CS400 Spring 2023 File Header Information ==--
+// Name: Asish Das
+// Email: das38@wisc.edu
+// Team: RED(DF)
+// TA: Callie
+// Lecturer: Florian Heimerl
+// Notes to Grader: <optional extra notes>
+
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -22,6 +31,10 @@ public class MovieReaderDW implements MovieReaderInterface {
 			// getting all the parts
 			//counting even number of quotes
 			String[] parts = line.split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)", -1);
+			if (parts.length != 5){
+                                System.out.println("Warning: found a line without matching parameters " + line);
+				continue;
+			}
 			//creating and adding new movie objects into the list
 			movies.add(new MovieDW(parts[0], Integer.valueOf(parts[1]), Integer.valueOf(parts[2].split(" ")[0]), Double.valueOf(parts[3]), parts[4]));
 		}
