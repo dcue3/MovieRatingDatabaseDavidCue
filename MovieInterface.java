@@ -1,5 +1,5 @@
 
-public interface MovieInterface {
+public interface MovieInterface extends Comparable<MovieInterface>{
 	// public MovieInterface(String title, int released_year, int runtime, Double rating, String directorName);
     //methods
     public String getTitle();

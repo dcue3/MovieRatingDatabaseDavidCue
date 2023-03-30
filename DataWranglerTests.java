@@ -1,3 +1,11 @@
+// --== CS400 Spring 2023 File Header Information ==--
+// Name: Asish Das
+// Email: das38@wisc.edu
+// Team: RED(DF)
+// TA: Callie
+// Lecturer: Florian Heimerl
+// Notes to Grader: <optional extra notes>
+
 import java.io.FileNotFoundException;
 import org.junit.Test;
 import static org.junit.Assert.*;
