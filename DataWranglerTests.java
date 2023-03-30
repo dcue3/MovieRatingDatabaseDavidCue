@@ -55,7 +55,7 @@ public class DataWranglerTests {
 	}
 	
 	/**
-	 * JUnit test for testing the two compareTo methods of MovieDW class
+	 * JUnit test for testing the first compareTo methods of MovieDW class
 	 */
 	@Test
 	public void test3() {
@@ -70,6 +70,22 @@ public class DataWranglerTests {
 		}
 		// because we know the rating of the first movie is greater than 5
 		assertEquals(movies.get(0).compareTo(5.0), 1);
+	}
+
+	/**
+	 * JUnit test for testing the second compare method
+	 */
+	@Test
+	public void test4() {
+		List<MovieInterface> movies = null;
+		MovieReaderInterface movie_reader = new MovieReaderDW();
+
+		try {
+			movies = movie_reader.readMoviesFromFile("./data/test.txt");
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+
 		// comparing the objects based on ratings.
 		// creating a movie object
 		MovieInterface testMovie = new MovieDW("some title", 2023, 120, 8.5, "Christopher Nolan");
@@ -78,4 +94,23 @@ public class DataWranglerTests {
 		//comparing with Terminator 2: Judgment Day should return 0 because its rating is also 8.5
 		assertEquals(testMovie.compareTo(movies.get(44)), 0);
 	}
+
+	/**
+	 * Junit tests for get released year and readMoviesFromFile
+	 */
+	@Test
+	public void test5() {
+		List<MovieInterface> movies = null;
+		MovieReaderInterface movie_reader = new MovieReaderDW();
+
+		try {
+			movies = movie_reader.readMoviesFromFile("./data/test.txt");
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		//checking individual released year.
+		assertEquals(movies.get(1).getReleasedYear(), 1972);
+		assertEquals(movies.get(3).getReleasedYear(), 1974);
+	}
+
 }
