@@ -1,0 +1,56 @@
+Script started on 2023-03-30 00:46:29+00:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="94" LINES="49"]
+[?2004h]0;das38@cs400: ~/Project2_DF_red[01;32mdas38@cs400[00m:[01;34m~/Project2_DF_red[00m$ git status
+[?2004lOn branch DataWrangler
+Your branch is ahead of 'origin/DataWrangler' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	[31mlog[m
+
+nothing added to commit but untracked files present (use "git add" to track)
+[?2004h]0;das38@cs400: ~/Project2_DF_red[01;32mdas38@cs400[00m:[01;34m~/Project2_DF_red[00m$ git log -1
+[?2004l[?1h=[33mcommit beb5c49c50c9b88331d11f1365790d0610f98473[m[33m ([m[1;36mHEAD -> [m[1;32mDataWrangler[m[33m)[m[m
+Author: Asish <das38@wisc.edu>[m
+Date:   Thu Mar 30 00:44:52 2023 +0000[m
+[m
+    final version is ready to be pushed[m
+[K[?1l>[?2004h]0;das38@cs400: ~/Project2_DF_red[01;32mdas38@cs400[00m:[01;34m~/Project2_DF_red[00m$ make clean
+[?2004lrm *.class
+[?2004h]0;das38@cs400: ~/Project2_DF_red[01;32mdas38@cs400[00m:[01;34m~/Project2_DF_red[00m$ ls
+[?2004lDataWranglerTests.java  MovieDW.java         MovieReaderDW.java         [0m[01;34mdata[0m        log
+Makefile                MovieInterface.java  MovieReaderInterface.java  [01;31mjunit5.jar[0m
+[?2004h]0;das38@cs400: ~/Project2_DF_red[01;32mdas38@cs400[00m:[01;34m~/Project2_DF_red[00m$ make runTests
+[?2004ljavac MovieReaderDW.java MovieReaderInterface.java
+javac -cp .:junit5.jar DataWranglerTests.java
+java -jar junit5.jar -cp . --select-class=DataWranglerTests
+
+Thanks for using JUnit! Support its development at https://junit.org/sponsoring
+
+[36m╷[0m
+[36m├─[0m [36mJUnit Jupiter[0m [32m✔[0m
+[36m├─[0m [36mJUnit Vintage[0m [32m✔[0m
+[36m│  └─[0m [36mDataWranglerTests[0m [32m✔[0m
+[36m│     ├─[0m [34mtest1[0m [32m✔[0m
+[36m│     ├─[0m [34mtest2[0m [32m✔[0m
+[36m│     └─[0m [34mtest3[0m [32m✔[0m
+[36m└─[0m [36mJUnit Platform Suite[0m [32m✔[0m
+
+Test run finished after 391 ms
+[         4 containers found      ]
+[         0 containers skipped    ]
+[         4 containers started    ]
+[         0 containers aborted    ]
+[         4 containers successful ]
+[         0 containers failed     ]
+[         3 tests found           ]
+[         0 tests skipped         ]
+[         3 tests started         ]
+[         0 tests aborted         ]
+[         3 tests successful      ]
+[         0 tests failed          ]
+
+[?2004h]0;das38@cs400: ~/Project2_DF_red[01;32mdas38@cs400[00m:[01;34m~/Project2_DF_red[00m$ exit
+[?2004lexit
+
+Script done on 2023-03-30 00:47:46+00:00 [COMMAND_EXIT_CODE="0"]
