@@ -1,4 +1,4 @@
-runTests: BackendDeveloperTests.class
+runBackendDeveloperTests: BackendDeveloperTests.class
 	java -jar junit5.jar -cp . --select-class=BackendDeveloperTests
 
 BackendDeveloperTests.class: BackendDeveloperTests.java MovieRanking.class MovieBD.class MovieReaderBD.class RedBlackTreeBD.class
