@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 runFrontendDeveloperTests: FrontendDeveloperTests.class
 	java -jar junit5.jar -cp . --select-class=FrontendDeveloperTests
 
@@ -12,11 +11,6 @@ CreateAll: FrontendFD.java FrontendInterface.java MovieFD.java MovieInterface.ja
 	javac MovieInterface.java
 	javac MovieRankingFD.java
 	javac MovieRankingInterface.java
-
-=======
-runTests: BackendDeveloperTests.class
-	java -jar junit5.jar -cp . --select-class=BackendDeveloperTests
->>>>>>> parent of b7ba547 (data wrangler merged)
 
 clean:
 	rm *.class
