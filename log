@@ -1,0 +1,76 @@
+Script started on 2023-03-30 01:11:01+00:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="95" LINES="24"]
+[?2004h]0;dcue@cs400: ~/Project2_DF_red[01;32mdcue@cs400[00m:[01;34m~/Project2_DF_red[00m$ git status
+[?2004lOn branch FrontendDeveloper
+Your branch is ahead of 'origin/FrontendDeveloper' by 3 commits.
+  (use "git push" to publish your local commits)
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	[31mlog[m
+
+nothing added to commit but untracked files present (use "git add" to track)
+[?2004h]0;dcue@cs400: ~/Project2_DF_red[01;32mdcue@cs400[00m:[01;34m~/Project2_DF_red[00m$ git log -1
+[?2004l[?1h=[33mcommit 440e1e9b85411170e98579891edd8db005578503[m[33m ([m[1;36mHEAD -> [m[1;32mFrontendDeveloper[m[33m)[m[m
+Author: David Cue <dcue@wisc.edu>[m
+Date:   Thu Mar 30 01:10:29 2023 +0000[m
+[m
+    Edited Makefile[m
+[K[?1l>[?2004h]0;dcue@cs400: ~/Project2_DF_red[01;32mdcue@cs400[00m:[01;34m~/Project2_DF_red[00m$ make clean
+[?2004lrm *.class
+rm: cannot remove '*.class': No such file or directory
+make: *** [Makefile:17: clean] Error 1
+[?2004h]0;dcue@cs400: ~/Project2_DF_red[01;32mdcue@cs400[00m:[01;34m~/Project2_DF_red[00m$ ls
+[?2004lFrontendDeveloperTests.java  Makefile             MovieRankingFD.java         [0m[01;31mjunit5.jar[0m
+FrontendFD.java              MovieFD.java         MovieRankingInterface.java  log
+FrontendInterface.java       MovieInterface.java  junit5
+[?2004h]0;dcue@cs400: ~/Project2_DF_red[01;32mdcue@cs400[00m:[01;34m~/Project2_DF_red[00m$ make runTests
+[?2004ljavac FrontendFD.java
+javac FrontendInterface.java
+javac MovieFD.java
+javac MovieInterface.java
+javac MovieRankingFD.java
+javac MovieRankingInterface.java
+javac -cp .:junit5.jar FrontendDeveloperTests.java
+java -jar junit5.jar -cp . --select-class=FrontendDeveloperTests
+Added movie(s) succesfully
+Added movie(s) succesfully
+Cleared movies succesfully
+Added movie(s) succesfully
+Added movie(s) succesfully
+Added movie(s) succesfully
+Error: movie may not have been deleted
+Deleted movie(s) succesfully
+Loaded movie(s) succesfully
+Error: invalid file name
+
+Thanks for using JUnit! Support its development at https://junit.org/sponsoring
+
+[36m╷[0m
+[36m├─[0m [36mJUnit Jupiter[0m [32m✔[0m
+[36m│  └─[0m [36mFrontendDeveloperTests[0m [32m✔[0m
+[36m│     ├─[0m [34mclearTest()[0m [32m✔[0m
+[36m│     ├─[0m [34maddTest()[0m [32m✔[0m
+[36m│     ├─[0m [34msearchTest()[0m [32m✔[0m
+[36m│     ├─[0m [34mremoveTest()[0m [32m✔[0m
+[36m│     └─[0m [34mloadTest()[0m [32m✔[0m
+[36m├─[0m [36mJUnit Vintage[0m [32m✔[0m
+[36m└─[0m [36mJUnit Platform Suite[0m [32m✔[0m
+
+Test run finished after 175 ms
+[         4 containers found      ]
+[         0 containers skipped    ]
+[         4 containers started    ]
+[         0 containers aborted    ]
+[         4 containers successful ]
+[         0 containers failed     ]
+[         5 tests found           ]
+[         0 tests skipped         ]
+[         5 tests started         ]
+[         0 tests aborted         ]
+[         5 tests successful      ]
+[         0 tests failed          ]
+
+[?2004h]0;dcue@cs400: ~/Project2_DF_red[01;32mdcue@cs400[00m:[01;34m~/Project2_DF_red[00m$ exit
+[?2004lexit
+
+Script done on 2023-03-30 01:11:49+00:00 [COMMAND_EXIT_CODE="0"]
