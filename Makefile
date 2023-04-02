@@ -1,11 +1,16 @@
-runBackendDeveloperTests: BackendDeveloperTests.class
-	java -jar junit5.jar -cp . --select-class=BackendDeveloperTests
+runFrontendDeveloperTests: FrontendDeveloperTests.class
+	java -jar junit5.jar -cp . --select-class=FrontendDeveloperTests
 
-runDataWranglerTests: DataWranglerTests.class
-	java -jar junit5.jar -cp . --select-class=DataWranglerTests
+FrontendDeveloperTests.class: FrontendDeveloperTests.java CreateAll
+	javac -cp .:junit5.jar FrontendDeveloperTests.java
 
-BackendDeveloperTests.class: BackendDeveloperTests.java MovieRanking.class MovieBD.class MovieReaderBD.class RedBlackTreeBD.class
-	javac -cp .:junit5.jar BackendDeveloperTests.java
+CreateAll: FrontendFD.java FrontendInterface.java MovieFD.java MovieInterface.java MovieRankingFD.java MovieRankingInterface.java
+	javac FrontendFD.java
+	javac FrontendInterface.java
+	javac MovieFD.java
+	javac MovieInterface.java
+	javac MovieRankingFD.java
+	javac MovieRankingInterface.java
 
 MovieRanking.class: MovieRanking.java MovieRankingInterface.java
 	javac MovieRanking.java MovieRankingInterface.java
