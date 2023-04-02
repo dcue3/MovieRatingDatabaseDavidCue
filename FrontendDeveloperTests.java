@@ -13,7 +13,7 @@ public class FrontendDeveloperTests {
   public void addTest() {//testing the frontend method to add a movie
     
     try {
-    FrontendFD frontend = new FrontendFD(); //creating frontend 
+    FrontendFD frontend = new FrontendFD(new MovieRankingFD()); //creating frontend 
     
     
     frontend.addMovieFD("New Movie", 9.9, "David Cue", 120, 2012); //adding movie
@@ -27,7 +27,7 @@ public class FrontendDeveloperTests {
   @Test
   public void removeTest() {//testing the frontend method to add a movie
     
-    FrontendFD frontend = new FrontendFD();//creating frontend
+    FrontendFD frontend = new FrontendFD(new MovieRankingFD());//creating frontend
     
 
     
@@ -50,7 +50,7 @@ public class FrontendDeveloperTests {
   @Test
  public void clearTest() {//testing the frontend method to add a movie
   
-  FrontendFD frontend = new FrontendFD(); //creating frontend
+    FrontendFD frontend = new FrontendFD(new MovieRankingFD());//creating frontend
   
   //adding two different movies
   frontend.addMovieFD("New Movie", 9.9, "David Cue", 120, 2012);
@@ -68,7 +68,7 @@ public class FrontendDeveloperTests {
   @Test
   public void loadTest() {//testing the frontend method to add a movie
   
-  FrontendFD frontend = new FrontendFD(); //creating frontend
+    FrontendFD frontend = new FrontendFD(new MovieRankingFD()); //creating frontend
   
   frontend.loadDataFD("testname"); //entering "testname" to method is hardcoded to load a singular movie. 
   
@@ -85,7 +85,7 @@ public class FrontendDeveloperTests {
   @Test
   public void searchTest() {//testing the frontend method to add a movie
   
-  FrontendFD frontend = new FrontendFD(); //creating frontend
+    FrontendFD frontend = new FrontendFD(new MovieRankingFD()); //creating frontend
   
   
   frontend.addMovieFD("New Movie", 9.9, "David Cue", 120, 2012); //adding movie

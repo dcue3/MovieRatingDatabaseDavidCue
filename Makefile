@@ -7,6 +7,9 @@ runBackendDeveloperTests: BackendDeveloperTests.class
 runDataWranglerTests: DataWranglerTests.class
 	java -jar junit5.jar -cp . --select-class=DataWranglerTests
 
+runAlgorithmEngineerTests: AlgorithmEngineerTests.class
+	java -jar junit5.jar -cp . --select-class=AlgorithmEngineerTests
+
 FrontendDeveloperTests.class: FrontendDeveloperTests.java CreateAll
 	javac -cp .:junit5.jar FrontendDeveloperTests.java
 
@@ -15,6 +18,17 @@ BackendDeveloperTests.class: BackendDeveloperTests.java MovieRanking.class Movie
 
 DataWranglerTests.class: DataWranglerTests.java MovieReaderDW.class MovieDW.class
 	javac -cp .:junit5.jar DataWranglerTests.java
+
+AlgorithmEngineerTests.class: AlgorithmEngineerTests.java RedBlackTreeAE.class RedBlackTree.class
+	javac -cp .:junit5.jar AlgorithmEngineerTests.java
+
+RedBlackTreeAE.class: RedBlackTreeAE.java RedBlackTreeInterfaceAE.java
+	javac RedBlackTreeInterfaceAE.java
+	javac RedBlackTreeAE.java 
+
+RedBlackTree.class: RedBlackTree.java 
+	javac RedBlackTree.java
+
 
 MovieReaderDW.class: MovieReaderDW.java MovieReaderInterface.java
 	javac MovieReaderDW.java MovieReaderInterface.java
