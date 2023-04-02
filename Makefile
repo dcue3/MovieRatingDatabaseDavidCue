@@ -1,25 +1,14 @@
-<<<<<<< HEAD
-runFrontendDeveloperTests: FrontendDeveloperTests.class
-	java -jar junit5.jar -cp . --select-class=FrontendDeveloperTests
+runDataWrnaglerTests: DataWranglerTests.class
+	java -jar junit5.jar -cp . --select-class=DataWranglerTests
 
-runBackendDeveloperTests: BackendDeveloperTests.class
-	java -jar junit5.jar -cp . --select-class=BackendDeveloperTests
+DataWranglerTests.class: DataWranglerTests.java MovieReaderDW.class MovieDW.class
+	javac -cp .:junit5.jar DataWranglerTests.java
 
-FrontendDeveloperTests.class: FrontendDeveloperTests.java CreateAll
-	javac -cp .:junit5.jar FrontendDeveloperTests.java
+MovieReaderDW.class: MovieReaderDW.java MovieReaderInterface.java
+	javac MovieReaderDW.java MovieReaderInterface.java
 
-CreateAll: FrontendFD.java FrontendInterface.java MovieFD.java MovieInterface.java MovieRankingFD.java MovieRankingInterface.java
-	javac FrontendFD.java
-	javac FrontendInterface.java
-	javac MovieFD.java
-	javac MovieInterface.java
-	javac MovieRankingFD.java
-	javac MovieRankingInterface.java
-
-=======
-runTests: BackendDeveloperTests.class
-	java -jar junit5.jar -cp . --select-class=BackendDeveloperTests
->>>>>>> parent of b7ba547 (data wrangler merged)
+MovieDW.class: MovieDW.java MovieInterface.java
+	javac MovieDW.java MovieInterface.java
 
 clean:
 	rm *.class
