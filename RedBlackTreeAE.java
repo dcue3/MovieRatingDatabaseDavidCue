@@ -1,4 +1,16 @@
-  // The context array stores the context of the node in the tree:
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+
+/**x
+ *
+ *
+ * This class builds on top of the RBT implementation.
+ *
+ * @author AlgorithmEngineer, Shreya Godishala
+ */
+public class RedBlackTreeAE<Value extends Comparable<Value>> extends RedBlackTree<Value> implements RedBlackTreeInterfaceAE<Value> {
+    // The context array stores the context of the node in the tree:
     // - context[0] is the parent reference of the node,
     // - context[1] is the left child reference of the node,
     // - context[2] is the right child reference of the node.
