@@ -22,8 +22,8 @@ DataWranglerTests.class: DataWranglerTests.java MovieReaderDW.class MovieDW.clas
 AlgorithmEngineerTests.class: AlgorithmEngineerTests.java RedBlackTreeAE.class RedBlackTree.class
 	javac -cp .:junit5.jar AlgorithmEngineerTests.java
 
-RedBlackTreeAE.class: RedBlackTreeAE.java RedBlackTreeInterfaceAE.java
-	javac RedBlackTreeInterfaceAE.java
+RedBlackTreeAE.class: RedBlackTreeAE.java RedBlackTreeInterface.java
+	javac RedBlackTreeInterface.java
 	javac RedBlackTreeAE.java 
 
 RedBlackTree.class: RedBlackTree.java 
