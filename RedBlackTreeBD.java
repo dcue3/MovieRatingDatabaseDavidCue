@@ -287,15 +287,16 @@ public class RedBlackTreeBD<Value extends Comparable<Value>> implements RedBlack
 	}
 
 	@Override
-	public List<Value> getByRange(double y, double x) {
+	public List<Value> getByRange(Value y, Value x) {
 		// Creating a fake ArrayList to return, adding one String object, which is comparable
 		ArrayList<Value> toReturn = new ArrayList<Value>();
 		// Returning a message indicating a valid range if passed a valid range
-		if ((x >= 0) && (y >= 0)) {
-			if (x > y) {
+		MovieInterface valid = new MovieBD(null, 0, 0, 0.0, null);
+		if ((x.compareTo((Value)valid) >= 0) && (y.compareTo((Value)valid) >= 0)) {
+			if (x.compareTo(y) > 0) {
 				// Creating a new movie with rating > 5.0 to indicate a valid range
-				MovieInterface valid = new MovieBD(null, 0, 0, 8.0, null);
-				toReturn.add((Value) valid);
+				MovieInterface validReturn = new MovieBD(null, 0, 0, 8.0, null);
+				toReturn.add((Value) validReturn);
 				return toReturn;
 			}
 		}
