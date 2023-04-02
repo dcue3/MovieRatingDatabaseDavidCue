@@ -1,9 +1,6 @@
 runFrontendDeveloperTests: FrontendDeveloperTests.class
 	java -jar junit5.jar -cp . --select-class=FrontendDeveloperTests
 
-runBackendDeveloperTests: BackendDeveloperTests.class
-	java -jar junit5.jar -cp . --select-class=BackendDeveloperTests
-
 FrontendDeveloperTests.class: FrontendDeveloperTests.java CreateAll
 	javac -cp .:junit5.jar FrontendDeveloperTests.java
 
