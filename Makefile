@@ -7,7 +7,7 @@ runBackendDeveloperTests: BackendDeveloperTests.class
 FrontendDeveloperTests.class: FrontendDeveloperTests.java CreateAll
 	javac -cp .:junit5.jar FrontendDeveloperTests.java
 
-BackendDeveloperTests.class: BackendDeveloperTests.java MovieRanking.class MovieBD.class MovieReaderBD.class Red>
+BackendDeveloperTests.class: BackendDeveloperTests.java MovieRanking.class MovieBD.class MovieReaderBD.class RedBlackTreeBD.class
 	javac -cp .:junit5.jar BackendDeveloperTests.java
 
 MovieRanking.class: MovieRanking.java MovieRankingInterface.java
