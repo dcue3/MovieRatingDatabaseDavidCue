@@ -1,6 +1,9 @@
 runBackendDeveloperTests: BackendDeveloperTests.class
 	java -jar junit5.jar -cp . --select-class=BackendDeveloperTests
 
+runDataWranglerTests: DataWranglerTests.class
+	java -jar junit5.jar -cp . --select-class=DataWranglerTests
+
 BackendDeveloperTests.class: BackendDeveloperTests.java MovieRanking.class MovieBD.class MovieReaderBD.class RedBlackTreeBD.class
 	javac -cp .:junit5.jar BackendDeveloperTests.java
 
