@@ -1,19 +1,13 @@
 <<<<<<< HEAD
-<<<<<<< HEAD
 Script started on 2023-03-30 01:11:01+00:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="95" LINES="24"]
 [?2004h]0;dcue@cs400: ~/Project2_DF_red[01;32mdcue@cs400[00m:[01;34m~/Project2_DF_red[00m$ git status
 [?2004lOn branch FrontendDeveloper
 Your branch is ahead of 'origin/FrontendDeveloper' by 3 commits.
 =======
-=======
->>>>>>> parent of b7ba547 (data wrangler merged)
 Script started on 2023-03-30 03:51:00+00:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="149" LINES="41"]
 [?2004h]0;sdabbara@sudheesh-bash: ~/Project2_DF_red[01;32msdabbara@sudheesh-bash[00m:[01;34m~/Project2_DF_red[00m$ [7mgit status[27mgit status
 [?2004lOn branch BackendDeveloper
 Your branch is ahead of 'origin/BackendDeveloper' by 1 commit.
-<<<<<<< HEAD
->>>>>>> parent of b7ba547 (data wrangler merged)
-=======
 >>>>>>> parent of b7ba547 (data wrangler merged)
   (use "git push" to publish your local commits)
 
@@ -23,14 +17,11 @@ Untracked files:
 
 nothing added to commit but untracked files present (use "git add" to track)
 <<<<<<< HEAD
-<<<<<<< HEAD
 [?2004h]0;dcue@cs400: ~/Project2_DF_red[01;32mdcue@cs400[00m:[01;34m~/Project2_DF_red[00m$ git log -1
 [?2004l[?1h=[33mcommit 440e1e9b85411170e98579891edd8db005578503[m[33m ([m[1;36mHEAD -> [m[1;32mFrontendDeveloper[m[33m)[m[m
 Author: David Cue <dcue@wisc.edu>[m
 Date:   Thu Mar 30 01:10:29 2023 +0000[m
 =======
-=======
->>>>>>> parent of b7ba547 (data wrangler merged)
 [?2004h]0;sdabbara@sudheesh-bash: ~/Project2_DF_red[01;32msdabbara@sudheesh-bash[00m:[01;34m~/Project2_DF_red[00m$ [7mgit log -1[27mgit log -1
 [?2004l[?1h=[33mcommit 7db850cac7845562ba1a91eefef9a15becdbbb6a[m[33m ([m[1;36mHEAD -> [m[1;32mBackendDeveloper[m[33m)[m[m
 Author: Sudheesh Dabbara <sdabbara@wisc.edu>[m
@@ -80,16 +71,12 @@ Note: RedBlackTreeBD.java uses unchecked or unsafe operations.
 Note: Recompile with -Xlint:unchecked for details.
 javac -cp .:junit5.jar BackendDeveloperTests.java
 java -jar junit5.jar -cp . --select-class=BackendDeveloperTests
-<<<<<<< HEAD
->>>>>>> parent of b7ba547 (data wrangler merged)
-=======
 >>>>>>> parent of b7ba547 (data wrangler merged)
 
 Thanks for using JUnit! Support its development at https://junit.org/sponsoring
 
 [36m╷[0m
 [36m├─[0m [36mJUnit Jupiter[0m [32m✔[0m
-<<<<<<< HEAD
 <<<<<<< HEAD
 [36m│  └─[0m [36mFrontendDeveloperTests[0m [32m✔[0m
 [36m│     ├─[0m [34mclearTest()[0m [32m✔[0m
@@ -102,8 +89,6 @@ Thanks for using JUnit! Support its development at https://junit.org/sponsoring
 
 Test run finished after 175 ms
 =======
-=======
->>>>>>> parent of b7ba547 (data wrangler merged)
 [36m│  └─[0m [36mBackendDeveloperTests[0m [32m✔[0m
 [36m│     ├─[0m [34mgetMoviesByRangeAndRemoveByRatingRangeTest()[0m [32m✔[0m
 [36m│     ├─[0m [34mloadMoviesListTest()[0m [32m✔[0m
@@ -114,9 +99,6 @@ Test run finished after 175 ms
 [36m└─[0m [36mJUnit Platform Suite[0m [32m✔[0m
 
 Test run finished after 231 ms
-<<<<<<< HEAD
->>>>>>> parent of b7ba547 (data wrangler merged)
-=======
 >>>>>>> parent of b7ba547 (data wrangler merged)
 [         4 containers found      ]
 [         0 containers skipped    ]
@@ -132,19 +114,13 @@ Test run finished after 231 ms
 [         0 tests failed          ]
 
 <<<<<<< HEAD
-<<<<<<< HEAD
 [?2004h]0;dcue@cs400: ~/Project2_DF_red[01;32mdcue@cs400[00m:[01;34m~/Project2_DF_red[00m$ exit
 [?2004lexit
 
 Script done on 2023-03-30 01:11:49+00:00 [COMMAND_EXIT_CODE="0"]
 =======
-=======
->>>>>>> parent of b7ba547 (data wrangler merged)
 [?2004h]0;sdabbara@sudheesh-bash: ~/Project2_DF_red[01;32msdabbara@sudheesh-bash[00m:[01;34m~/Project2_DF_red[00m$ [7mexit[27mexit
 [?2004lexit
 
 Script done on 2023-03-30 03:52:08+00:00 [COMMAND_EXIT_CODE="0"]
-<<<<<<< HEAD
->>>>>>> parent of b7ba547 (data wrangler merged)
-=======
 >>>>>>> parent of b7ba547 (data wrangler merged)
