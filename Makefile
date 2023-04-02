@@ -18,5 +18,15 @@ MovieReaderBD.class: MovieReaderBD.java MovieReaderInterface.java
 
 RedBlackTreeBD.class: RedBlackTreeBD.java RedBlackTreeInterface.java
 	javac RedBlackTreeBD.java RedBlackTreeInterface.java
+
+DataWranglerTests.class: DataWranglerTests.java MovieReaderDW.class MovieDW.class
+        javac -cp .:junit5.jar DataWranglerTests.java
+
+MovieReaderDW.class: MovieReaderDW.java MovieReaderInterface.java
+        javac MovieReaderDW.java MovieReaderInterface.java
+
+MovieDW.class: MovieDW.java MovieInterface.java
+        javac MovieDW.java MovieInterface.java
+
 clean:
-	rm *.class
+        rm *.class
