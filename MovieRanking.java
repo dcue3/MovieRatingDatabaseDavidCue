@@ -59,8 +59,8 @@ public class MovieRanking implements MovieRankingInterface {
 	@Override
 	public String getMoviesByRating(double x, double y) {
 		// Creating two new movies using the ranges to pass to the AE method
-		MovieInterface movieX = new MovieBD(null, 0, 0, x, null);
-		MovieInterface movieY = new MovieBD(null, 0, 0, y, null);
+		MovieInterface movieX = new MovieDW(null, 0, 0, x, null);
+		MovieInterface movieY = new MovieDW(null, 0, 0, y, null);
 		// Getting the List of movies using the AE's method
 		String toReturn = null;
 		List<MovieInterface> movies = (List<MovieInterface>) RedBlackTreeAE.getByRange(movieX, movieY);
@@ -104,8 +104,8 @@ public class MovieRanking implements MovieRankingInterface {
         **/
 	@Override
 	public void removeByRatingRange(double x, double y) {
-		MovieInterface movieX = new MovieBD(null, 0, 0, x, null);
-                MovieInterface movieY = new MovieBD(null, 0, 0, y, null);
+		MovieInterface movieX = new MovieDW(null, 0, 0, x, null);
+                MovieInterface movieY = new MovieDW(null, 0, 0, y, null);
 		// Getting the list of movies in the provided range 
 		List<MovieInterface> movies = RedBlackTreeAE.getByRange(movieX, movieY);
 		if (movies.size() == 0) {

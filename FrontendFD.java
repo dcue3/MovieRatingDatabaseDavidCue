@@ -7,7 +7,11 @@ import java.util.Scanner;
 
 public class FrontendFD implements FrontendInterface{
   
-public MovieRankingInterface movieList = new MovieRankingFD();
+public MovieRankingInterface movieList;
+
+public FrontendFD(MovieRankingInterface mov) {
+  movieList=mov;
+}
 
 public void runCommandLoop() {
   Scanner h;
@@ -173,10 +177,5 @@ public void clearFD() {
 
 
 
-public static void main(String args[]) {
-  FrontendFD frontend = new FrontendFD();
-  
-  frontend.runCommandLoop();
-}
 
 }
