@@ -27,8 +27,7 @@ RedBlackTreeAE.class: RedBlackTreeAE.java RedBlackTreeInterfaceAE.java
 	javac RedBlackTreeAE.java 
 
 RedBlackTree.class: RedBlackTree.java 
-	javac RedBlackTree.java 
-
+	javac RedBlackTree.java
 
 
 MovieReaderDW.class: MovieReaderDW.java MovieReaderInterface.java
