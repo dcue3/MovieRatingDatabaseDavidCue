@@ -1,4 +1,4 @@
-runDataWrnaglerTests: DataWranglerTests.class
+runDataWranglerTests: DataWranglerTests.class
 	java -jar junit5.jar -cp . --select-class=DataWranglerTests
 
 DataWranglerTests.class: DataWranglerTests.java MovieReaderDW.class MovieDW.class
