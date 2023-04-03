@@ -8,7 +8,7 @@ import java.util.List;
  *
  * @author AlgorithmEngineer, Shreya Godishala
  */
-public class RedBlackTreeAE<Value extends Comparable<Value>> extends RedBlackTree<Value> implements RedBlackTreeInterfaceAE<Value> {
+public class RedBlackTreeAE<Value extends Comparable<Value>> extends RedBlackTree<Value> implements RedBlackTreeInterface<Value> {
 
     // The context array stores the context of the node in the tree:
     // - context[0] is the parent reference of the node,
