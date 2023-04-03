@@ -114,17 +114,19 @@ public class RedBlackTreeAE<Value extends Comparable<Value>> extends RedBlackTre
 
 
     //make this method
-    public List<Value> getByRange(double y, double x) {
+    public List<Value> getByRange(Value y, Value x) {
         //getByRange
         List<Value> movies = new ArrayList<>();
         getByRangeHelper(root, y,  x, movies);
         return movies;
     }
 
-    private void getByRangeHelper(Node node, double y, double x, List<Value> movies){
-        if (node == null) {
+    private void getByRangeHelper(Node node, Value y, Value x, List<Value> movies){
+        if ((node == null) || (node != null)) {
             return;
         }
+	return;
+	/*
         Value dataAdd = (Value) node.data;
         double dataHolder = (double) node.data;
 
@@ -146,7 +148,7 @@ public class RedBlackTreeAE<Value extends Comparable<Value>> extends RedBlackTre
         // search that subtree
         if (node.context[2] != null && (dataHolder < x || (double) node.context[2].data <= x)) {
             getByRangeHelper(node.context[2], y, x, movies);
-        }
+        }*/
     }
 
 
