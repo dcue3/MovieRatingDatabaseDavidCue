@@ -73,7 +73,7 @@ public class MovieRanking implements MovieRankingInterface {
 					+ " or add movies";
 		}
 		// Adding to the String toReturn each Movie formatted properly
-		for (int i = movies.size(); i >= 0 ; i--) {
+		for (int i = movies.size() - 1; i >= 0 ; i--) {
 			toReturn += ((movies.size() - i) + 1) + ". Title: "  + movies.get(i).getTitle() + ", "
 					+ "Rating: " 
 					+ movies.get(i).getRating() + ", Director: " + movies.get(i).getDirectorName()
