@@ -218,6 +218,7 @@ public class RedBlackTreeAE<Value extends Comparable<Value>> extends RedBlackTre
         return movies;
     }
 
+<<<<<<< HEAD
     private void getByRangeHelper(Node<Value> node, Value y, Value x, List<Value> movies){
         if (node == null) { // check if my node is null which is my root node
             return;
@@ -228,6 +229,36 @@ public class RedBlackTreeAE<Value extends Comparable<Value>> extends RedBlackTre
         }
         getByRangeHelper(node.context[1], y, x, movies); // if not recurse left
         getByRangeHelper(node.context[2], y, x, movies);// recurse right
+=======
+    private void getByRangeHelper(Node node, Value y, Value x, List<Value> movies){
+        if ((node == null) || (node != null)) {
+            return;
+        }
+	return;
+	/*
+        Value dataAdd = (Value) node.data;
+        double dataHolder = (double) node.data;
+
+        // If the range overlaps with the subtree rooted at the current node,
+        // add the node's data to the list of movies
+        if (dataHolder >= y && dataHolder <= x) {
+            movies.add(dataAdd);
+        }
+
+
+
+        // If the left subtree has values in the desired range, recursively
+        // search that subtree
+        if (node.context[1] != null && (dataHolder > y || (double) node.context[1].data >= y)) {
+            getByRangeHelper(node.context[1], y, x, movies);
+        }
+
+        // If the right subtree has values in the desired range, recursively
+        // search that subtree
+        if (node.context[2] != null && (dataHolder < x || (double) node.context[2].data <= x)) {
+            getByRangeHelper(node.context[2], y, x, movies);
+        }*/
+>>>>>>> 1ca82e621890f06b13537cda0b9190a4e94a654b
     }
 
 
