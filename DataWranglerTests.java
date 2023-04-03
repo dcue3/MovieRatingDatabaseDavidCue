@@ -10,8 +10,15 @@ import java.io.FileNotFoundException;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import java.util.List;
+import static org.hamcrest.CoreMatchers.containsString;
+import static org.junit.Assert.assertThat;
+
 
 public class DataWranglerTests {
+	
+
+
+
 
         /**
          * Junit test to test the readMoviesFromFile of the MoviesReaderDW class.
@@ -112,5 +119,60 @@ public class DataWranglerTests {
                 assertEquals(movies.get(1).getReleasedYear(), 1972);
                 assertEquals(movies.get(3).getReleasedYear(), 1974);
         }
+	
+	/**
+	 *Integration Test 1
+	 * combining DataWrangler(mine), AE, and backend to test some methods
+	 */
+	@Test
+	public void IntegrationTest1(){
+		RedBlackTreeInterface RBTInstance = new RedBlackTreeAE<MovieInterface>();
+                MovieReaderInterface movie_reader = new MovieReaderDW();
+                MovieRankingInterface movierankerBD = new MovieRanking(movie_reader, RBTInstance);
+                try{
+                        movierankerBD.loadMoviesList("./data/test.txt");
+                } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                }
+		//movierankerBD.removeByRatingRange(8.0, 10.0);
+		System.out.println(movierankerBD.getMoviesByRating(8.0, 10.0));		
+		
+	}
 
+
+	/**
+	 *Junit test for algorithm engineer methods
+	 */
+	@Test
+	public void CodeReviewOfAlgorithmEngineer(){
+		RedBlackTree<Integer> tree = new RedBlackTree<>();
+    		tree.insert(10);
+    		tree.insert(5);
+    		tree.insert(12);
+    		tree.insert(4);
+    		assertEquals(tree.root.data, Integer.valueOf(10));
+    		assertEquals(tree.root.blackHeight, 1); // root is always black
+    		assertEquals(tree.root.context[1].blackHeight, 1); // 5 should be black
+    		assertEquals(tree.root.context[2].blackHeight, 1); //12 should be black
+    		assertEquals(tree.root.context[1].context[1].blackHeight, 0); // 4 should be red
+	}
+
+	/**
+	 *Junit test for codereview of Backend methods
+	 *testing the loadData method and getData() method.
+	 */
+	@Test
+	public void CodeReviewofBackendDeveloper(){
+	       RedBlackTreeInterface RBTInstance = new RedBlackTreeAE<MovieInterface>();	
+		MovieReaderInterface movie_reader = new MovieReaderDW();
+		MovieRankingInterface movierankerBD = new MovieRanking(movie_reader, RBTInstance);
+		try{
+			movierankerBD.loadMoviesList("./data/test.txt");
+		} catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                }
+		//System.out.println(movierankerBD.getData());
+		assertThat(movierankerBD.getData(), containsString("Rating: 9.3")); //it contains the highest rated movie of rating 9.3
+
+	}	
 }
