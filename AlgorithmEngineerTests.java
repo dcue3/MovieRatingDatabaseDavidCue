@@ -9,45 +9,76 @@ public class AlgorithmEngineerTests extends RedBlackTreeAE {
 
     @Test
     void testRecolor() {
+        // Case 1: Examined node is root, end of recursion
         // create binary tree
-        RedBlackTreeAE<Integer> tree = new RedBlackTreeAE<Integer>();
-       // BinaryTree<Integer> tree = new BinaryTree<>();
-        tree.insert(5);
-        tree.insert(3);
-        tree.insert(7);
-        tree.insert(2);
-        tree.insert(4);
-        tree.insert(6);
-        tree.insert(8);
+        List<Integer> listTrack = new ArrayList<>();
 
-        // delete node with value 2
-        tree.remove(2);
 
-        // check that black height is restored
-        assertEquals(tree.root.blackHeight, 1);
-        assertEquals(tree.root.context[1].blackHeight, 0);
-        assertEquals(tree.root.context[2].blackHeight, 0);
+        RedBlackTreeAE<Integer> tree1 = new RedBlackTreeAE<Integer>();
+        // set up the tree
+        tree1.insert(23);
+        tree1.insert(7);
+        tree1.insert(41);
+        tree1.insert(5);
+        // inserting the new node
+        tree1.insert(37);
+
+        System.out.println(tree1.inOrderTraversal());
+
+
+        //remove
+        listTrack.add(tree1.root.blackHeight);
+        listTrack.add(tree1.root.context[1].blackHeight); //left
+        listTrack.add(tree1.root.context[2].blackHeight);
+        listTrack.add(tree1.root.context[2].context[1].blackHeight);
+        //System.out.println(listTrack);
+
+        System.out.println("Before " + listTrack);
+
+        tree1.remove(5);
+        System.out.println(tree1.inOrderTraversal());
+        listTrack.add(tree1.root.blackHeight);
+        listTrack.add(tree1.root.context[1].blackHeight); //left
+        listTrack.add(tree1.root.context[2].blackHeight);
+        listTrack.add(tree1.root.context[2].context[1].blackHeight);
+
+
+        System.out.println(listTrack);
+
+        // check the colors of each node
+        assertEquals( 1, tree1.root.blackHeight); // black is 1 and the //"Root should be black",
+        assertEquals( 1, tree1.root.context[1].blackHeight); //"Left child should be black",
+        // the left child in this should be black
+        assertEquals( 1, tree1.root.context[2].blackHeight); //Right child should be black",
+        // the right child should be black
+        assertEquals( 0, tree1.root.context[2].context[1].blackHeight); //"New node should be red",
+        // all the newNodes are red
+
+
     }
 
     @Test
 void testGetByRange() {
     // create binary tree with movie release years as values
-    RedBlackTreeAE<Integer> tree = new RedBlackTreeAE<Integer>();
-    tree.insert(2004);
-    tree.insert(2005);
-    tree.insert(2006);
-    tree.insert(2010);
-    tree.insert(2015);
+     // create binary tree with movie release years as values
+        RedBlackTreeAE<Integer> tree = new RedBlackTreeAE<Integer>();
+        tree.insert(4);
+        tree.insert(5);
+        tree.insert(6);
+        tree.insert(7);
+        tree.insert(8);
 
-    // get movies released between 2005 and 2015
-    List<Integer> movies = tree.getByRange(2005, 2015);
+        // get movies released between 2005 and 2015
+        List<Integer> movies = tree.getByRange(7, 10);
 
-    // check that the correct movies are returned
-    List<Integer> expected = new ArrayList<>();
-    expected.add(2010);
-    expected.add(2015);
-    expected.add(2005);
-    assertEquals(movies, expected);
+        System.out.print(movies);
+
+        // check that the correct movies are returned
+        List<Integer> expected = new ArrayList<>();
+        expected.add(7);
+        expected.add(8);
+
+        assertEquals(movies, expected);
 }
 
     @Test
