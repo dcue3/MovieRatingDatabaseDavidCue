@@ -4,6 +4,8 @@ runApp: TestRun.class
 TestRun.class: TestRun.java
 	javac TestRun.java
 
+runAllTests: runFrontendDeveloperTests runBackendDeveloperTests runAlgorithmEngineerTests runDataWranglerTests
+
 runFrontendDeveloperTests: FrontendDeveloperTests.class
 	java -jar junit5.jar -cp . --select-class=FrontendDeveloperTests
 

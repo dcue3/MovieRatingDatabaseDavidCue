@@ -336,4 +336,26 @@ public class RedBlackTreeBD<Value extends Comparable<Value>> implements RedBlack
 		return false;
 	}
 
+
+
+
+
+/*	@Override
+	public List<Value> inOrderTraversal() {
+        	List<Value> traversal = new ArrayList<>();
+        	inOrderTraversalHelper(this.root, traversal);
+        	return traversal;
+    	}
+
+    	private void inOrderTraversalHelper(Node<Value> node, List<Value> traversal) {
+            if (node != null) {
+                inOrderTraversalHelper(node.context[1], traversal); // traverse left subtree
+                traversal.add(node.data); // visit current node
+                inOrderTraversalHelper(node.context[2], traversal); // traverse right subtree
+            }
+        }
+     //   sb.append(" ]");
+      //  return sb.toString();
+*/
+
 }

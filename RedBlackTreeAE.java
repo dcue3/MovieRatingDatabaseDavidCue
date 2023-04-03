@@ -131,8 +131,7 @@ public class RedBlackTreeAE<Value extends Comparable<Value>> extends RedBlackTre
         } else {
             rotateRight(node.context[0]);
         }
-    }
-    private void handleBlackSiblingWithAtLeastOneRedChild(Node node, Node sibling) {
+    }   private void handleBlackSiblingWithAtLeastOneRedChild(Node node, Node sibling) {
         boolean nodeIsLeftChild = node == node.context[0].context[1];
 
         // Case 5: Black sibling with at least one red child + "outer nephew" is black
@@ -231,27 +230,37 @@ public class RedBlackTreeAE<Value extends Comparable<Value>> extends RedBlackTre
         }
 
 
-    public List<Value> inOrderTraversal() {
+   /* public List<Value> inOrderTraversal() {
         List<Value> traversal = new ArrayList<>();
         inOrderTraversalHelper(this.root, traversal);
         return traversal;
-    }
+    } */
 
     @Override
     public void clear() {
-
+	this.root = null;
     }
 
-    private void inOrderTraversalHelper(Node<Value> node, List<Value> traversal) {
+   /* private void inOrderTraversalHelper(Node<Value> node, List<Value> traversal) {
             if (node != null) {
                 inOrderTraversalHelper(node.context[1], traversal); // traverse left subtree
                 traversal.add(node.data); // visit current node
                 inOrderTraversalHelper(node.context[2], traversal); // traverse right subtree
             }
-        }
+        } */
      //   sb.append(" ]");
       //  return sb.toString();
+ public List<Value> inOrderTraversal() {
+         List<Value> traversal = new ArrayList<>();
+         inOrderTraversalHelper(this.root, traversal);
+         return traversal;
+     }
 
+          private void inOrderTraversalHelper(Node<Value> node, List<Value> traversal) {
+          if (node != null) {
+              inOrderTraversalHelper(node.context[1], traversal); // traverse left subtree
+              traversal.add(node.data); // visit current node
+              inOrderTraversalHelper(node.context[2], traversal); // traverse right subtree
+          }
+      }
     }
-
-    // call clear from RBT
