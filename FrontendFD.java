@@ -175,7 +175,15 @@ public void clearFD() {
   
 }
 
-
+public void printDataFD() {
+  
+  try {
+    System.out.println(movieList.getData());
+  } catch (Exception e) {
+    System.out.println("Error: data  may not have been displayed");
+  } 
+  
+}
 
 
 }
