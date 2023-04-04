@@ -134,8 +134,8 @@ public class DataWranglerTests {
                 } catch (FileNotFoundException e) {
                         e.printStackTrace();
                 }
-		//movierankerBD.removeByRatingRange(8.0, 10.0);
-		System.out.println(movierankerBD.getMoviesByRating(8.0, 10.0));		
+		movierankerBD.removeByRatingRange(8.0, 10.0);
+		System.out.println(movierankerBD.getData());		
 		
 	}
 
