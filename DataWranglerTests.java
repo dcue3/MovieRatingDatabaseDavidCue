@@ -10,16 +10,13 @@ import java.io.FileNotFoundException;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import java.util.List;
+import java.util.ArrayList;
 import static org.hamcrest.CoreMatchers.containsString;
 import static org.junit.Assert.assertThat;
 
 
 public class DataWranglerTests {
 	
-
-
-
-
         /**
          * Junit test to test the readMoviesFromFile of the MoviesReaderDW class.
          * Also test for getTitle() and getRating() method in the MovieDW class
@@ -156,12 +153,14 @@ public class DataWranglerTests {
 		//after removing it should only contain 12 movies
 		assertThat(movierankerBD.getData(), containsString("12"));
 	}
+
 	/**
 	 *Junit test for algorithm engineer methods
 	 */
 	@Test
 	public void CodeReviewOfAlgorithmEngineer(){
-		RedBlackTree<Integer> tree = new RedBlackTree<>();
+		//testing the enforce method
+		RedBlackTreeAE<Integer> tree = new RedBlackTreeAE<Integer>();
     		tree.insert(10);
     		tree.insert(5);
     		tree.insert(12);
@@ -171,6 +170,12 @@ public class DataWranglerTests {
     		assertEquals(tree.root.context[1].blackHeight, 1); // 5 should be black
     		assertEquals(tree.root.context[2].blackHeight, 1); //12 should be black
     		assertEquals(tree.root.context[1].context[1].blackHeight, 0); // 4 should be red
+		// testing the getbyrange method
+		List<Integer> test = tree.getByRange(10, 12);
+		List<Integer> expected = new ArrayList<>();
+		expected.add(10);
+		expected.add(12);
+		assertEquals(expected, test);
 	}
 
 	/**
