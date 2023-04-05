@@ -1,8 +1,15 @@
-runApp: TestRun.class
-	java TestRun
+run: runClasses.class
+	java MovieRankingApp
 
-TestRun.class: TestRun.java
-	javac TestRun.java
+runTests: runFrontendDeveloperTests runBackendDeveloperTests runAlgorithmEngineerTests runDataWranglerTests
+
+clean:
+	rm *.class
+
+
+
+runClasses.class: MovieRankingApp.java MovieRanking.java RedBlackTree.java RedBlackTreeAE.java FrontendFD.java MovieDW.java MovieReaderDW.java
+	javac MovieRankingApp.java MovieRanking.java RedBlackTreeAE.java RedBlackTree.java MovieDW.java MovieReaderDW.java FrontendFD.java
 
 runFrontendDeveloperTests: FrontendDeveloperTests.class
 	java -jar junit5.jar -cp . --select-class=FrontendDeveloperTests
@@ -62,6 +69,3 @@ CreateAll: FrontendFD.java FrontendInterface.java MovieFD.java MovieInterface.ja
 	javac MovieInterface.java
 	javac MovieRankingFD.java
 	javac MovieRankingInterface.java
-
-clean:
-	rm *.class

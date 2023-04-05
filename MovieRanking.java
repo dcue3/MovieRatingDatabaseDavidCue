@@ -44,9 +44,11 @@ public class MovieRanking implements MovieRankingInterface {
 			return;
 		}
 		// Adding each movie to the RBT using the insert() method of RBT
+		int moviesAddedCount = 0;
 		for (int i = 0; i < moviesToAdd.size(); i++) {
 		    try {
 			RedBlackTreeAE.insert(moviesToAdd.get(i));
+			moviesAddedCount++;
 			this.size++;
 		    } catch (IllegalArgumentException e) {
 		    }		
@@ -65,7 +67,7 @@ public class MovieRanking implements MovieRankingInterface {
 		MovieInterface movieX = new MovieDW(null, 0, 0, x, null);
 		MovieInterface movieY = new MovieDW(null, 0, 0, y, null);
 		// Getting the List of movies using the AE's method
-		String toReturn = null;
+		String toReturn = "";
 		List<MovieInterface> movies = (List<MovieInterface>) RedBlackTreeAE.getByRange(movieX, movieY);
 		// Returning a message if the List is empty
 		if (movies.size() == 0) {
@@ -74,11 +76,11 @@ public class MovieRanking implements MovieRankingInterface {
 		}
 		// Adding to the String toReturn each Movie formatted properly
 		for (int i = movies.size() - 1; i >= 0 ; i--) {
-			toReturn += ((movies.size() - i) + 1) + ". Title: "  + movies.get(i).getTitle() + ", "
+			toReturn += (movies.size() - i) + ". Title: "  + movies.get(i).getTitle() + "\n    "
 					+ "Rating: " 
-					+ movies.get(i).getRating() + ", Director: " + movies.get(i).getDirectorName()
-					+ ", Run Time: " + movies.get(i).getRuntime()
-					+ ", Year: " + movies.get(i).getReleasedYear() + "\n" ;
+					+ movies.get(i).getRating() + "\n    Director: " + movies.get(i).getDirectorName()
+					+ "\n    Run Time: " + movies.get(i).getRuntime()
+					+ "\n    Year: " + movies.get(i).getReleasedYear() + "\n" ;
 		}
 		// Returning the String
 		return toReturn;
@@ -141,10 +143,10 @@ public class MovieRanking implements MovieRankingInterface {
 		}
 		// For each movie in the List, add it to the String toReturn properly formatted
 		for (int i = movies.size() - 1; i >= 0 ; i--) {
-			toReturn += ((movies.size() - i)) + ". \""  + movies.get(i).getTitle() + "\", Rating: " 
-					+ movies.get(i).getRating() + ", Director: " + movies.get(i).getDirectorName()
-					+ ", Run Time: " + movies.get(i).getRuntime()
-					+ ", Year: " + movies.get(i).getReleasedYear() + "\n" ;
+			toReturn += ((movies.size() - i)) + ". \""  + movies.get(i).getTitle() + "\"\n    Rating: " 
+					+ movies.get(i).getRating() + "\n    Director: " + movies.get(i).getDirectorName()
+					+ "\n    Run Time: " + movies.get(i).getRuntime()
+					+ "\n    Year: " + movies.get(i).getReleasedYear() + "\n" ;
 		}
 		// Return the properly formatted String with all movies in the MovieRanking ranked
 		return toReturn;

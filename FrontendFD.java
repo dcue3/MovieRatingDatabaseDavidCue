@@ -24,13 +24,14 @@ public void runCommandLoop() {
     int choice=-1;
     System.out.println(menu());
     try {
-    choice=h.nextInt(); 
-    if(choice<0 || choice>6) {throw new Exception();}
+    choice=h.nextInt();
+    h.nextLine();
+    if(choice<0 || choice>7) {throw new Exception();}
     }catch(Exception e) {System.out.println("Please enter valid choice");}
     
     if(choice==1) { 
       System.out.println("Enter name of file: ");
-      String name = h.next();
+      String name = h.nextLine();
       loadDataFD(name);
    
     }
@@ -43,11 +44,12 @@ public void runCommandLoop() {
       try {
         
       System.out.println("Enter name of movie: ");
-      name = h.next();
+      name = h.nextLine();
       System.out.println("Enter rating of movie (0-10): ");
        rating = h.nextDouble();
+       h.nextLine();
       System.out.println("Enter director of movie: ");
-       dir = h.next();
+      dir = h.nextLine();
       System.out.println("Enter runtime of movie(minutes): ");
        time = h.nextInt();
       System.out.println("Enter year of movie: ");
@@ -87,6 +89,9 @@ public void runCommandLoop() {
     else if(choice==6) {
       clearFD();
     }
+    else if(choice==7){
+    printDataFD();
+    }
     else if(choice==0) {
       choice1=0;
     }
@@ -106,6 +111,7 @@ public String menu() {
   menu += "4. Search for movies by rating \n";
   menu += "5. Print movie list \n";
   menu += "6. Clear movie list \n";
+  menu += "7. Display  movielist stats \n";
   menu += "0. Quit \n";
   
   
@@ -175,7 +181,15 @@ public void clearFD() {
   
 }
 
-
+public void printDataFD() {
+  
+  try {
+    System.out.println(movieList.getData());
+  } catch (Exception e) {
+    System.out.println("Error: data  may not have been displayed");
+  } 
+  
+}
 
 
 }
