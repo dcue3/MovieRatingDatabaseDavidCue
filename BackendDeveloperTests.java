@@ -78,21 +78,32 @@ class BackendDeveloperTests {
 	 */
 	@Test
 	void printAllMoviesTest() {
-		// Making sure the returned String is equal to the  expected String which is the hardcoded String
 		try {
 			String returned = instance.printAllMovies();
-			String expected = "		--------------------- Movie Ranker Movies ---------------------"
-					+ "\n\n1. \"Hardcoded expected title movie 1\", Rating: 10.0, Director: Test1,"
-					+ " Run Time: 0, Year: 0\n"
-					+ "2. \"Hardcoded expected title movie 2\", Rating: 9.6, Director: Test2,"
-					+ " Run Time: 0, Year: 0\n"
-					+ "3. \"Hardcoded expected title movie 3\", Rating: 8.0, Director: Test3,"
-					+ " Run Time: 0, Year: 0\n"
-					+ "4. \"Hardcoded expected title movie 4\", Rating: 4.0, Director: Test4, "
-					+ "Run Time: 0, Year: 0\n";
+			String expected = "		--------------------- Movie Ranker Movies ---------------------\n"
+					+ "\n"
+					+ "1. \"Hardcoded expected title movie 1\"\n"
+					+ "    Rating: 10.0\n"
+					+ "    Director: Test1\n"
+					+ "    Run Time: 0\n"
+					+ "    Year: 0\n"
+					+ "2. \"Hardcoded expected title movie 2\"\n"
+					+ "    Rating: 9.6\n"
+					+ "    Director: Test2\n"
+					+ "    Run Time: 0\n"
+					+ "    Year: 0\n"
+					+ "3. \"Hardcoded expected title movie 3\"\n"
+					+ "    Rating: 8.0\n"
+					+ "    Director: Test3\n"
+					+ "    Run Time: 0\n"
+					+ "    Year: 0\n"
+					+ "4. \"Hardcoded expected title movie 4\"\n"
+					+ "    Rating: 4.0\n"
+					+ "    Director: Test4\n"
+					+ "    Run Time: 0\n"
+					+ "    Year: 0\n";
 			assertEquals(returned, expected);
 		} catch (Exception e) {
-			// Failing the test if an unexpected Exception was thrown
 			fail("Unexpected Exception was thrown");
 		}
 	}
