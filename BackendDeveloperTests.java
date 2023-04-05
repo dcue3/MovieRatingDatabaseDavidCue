@@ -1,7 +1,13 @@
+// --== CS400 Spring 2023 File Header Information ==--
+// Name: Sudheesh Dabbara
+// Email: sdabbara@wisc.edu
+// Team: DF - Red
+// TA: Callie Kim
+// Lecturer: Florian Heimerl
+// Notes to Grader: N/A
+
 import static org.junit.jupiter.api.Assertions.*;
-
 import java.io.FileNotFoundException;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -194,7 +200,7 @@ class BackendDeveloperTests {
 	 * This tests the integration of the backend developer code with the frontend and datawrangler
 	 */
 	@Test
-	void BDIntegrationDWFDTest() {
+	void IntegrationBDWithDWFDTest() {
 		// Loading in the file in data named test.txt, thus testing integration of frontend with
 		// backend and datawrangler, as passing in the file name to frontend loadDataFD() method 
 		// should call the backend's load file method, which should use the datawrangler's
@@ -332,7 +338,7 @@ class BackendDeveloperTests {
 	 * other functionalities of the AE's implementation of the RedBlackTree alongside the Backend
 	 */
 	@Test
-	void BDIntegrationAETest() {
+	void IntegrationBDWithAETest() {
 		// Testing the functionality of the addMovies() method by adding movies through Backend
 		try {
 			instanceIntegration.addMovie("Sample Title", 5.0, "Sample Name", 100, 2004);
@@ -402,7 +408,7 @@ class BackendDeveloperTests {
 	 * This is a test that checks the loadMovies and addMovies functionality of the Frontend code
 	 */
 	@Test
-	void FrontendDeveloperTest1() {
+	void CodeReviewOfFrontendDeveloperTest1() {
 		// Testing the proper functionality of the loadDataFD method to make sure the right String
 		// is passed to the backend
 		// Using a call that should not throw an exception and failing if an Exception is thrown
@@ -441,7 +447,7 @@ class BackendDeveloperTests {
 	 * This is a test that checks working of remove, get, clear, and getstats of the Frontend code
 	 */
 	@Test
-	void FrontendDeveloperTest2() {
+	void CodeReviewOfFrontendDeveloperTest2() {
 		// Attempting to remove a invalid movie and expecting an error message, but an Exception
 		// should be handled, failing if the Exception is not handled
 		try {
@@ -502,4 +508,3 @@ class BackendDeveloperTests {
 		// overall shows proper functioning of the frontendFD class, writtem by FD, on its own.
 	}
 }
-
