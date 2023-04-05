@@ -134,12 +134,28 @@ public class DataWranglerTests {
                 } catch (FileNotFoundException e) {
                         e.printStackTrace();
                 }
-		movierankerBD.removeByRatingRange(8.0, 10.0);
-		System.out.println(movierankerBD.getData());		
-		
+		//movierankerBD.removeByRatingRange(8.0, 10.0);
+		//System.out.println(movierankerBD.getMoviesByRating(6.0, 8.0));		
+		assertThat(movierankerBD.getMoviesByRating(6.0, 8.0), containsString("Title: Badhaai ho")); //the first movie with the 8.0 rating	
 	}
-
-
+	/**
+	 *Integration Test 2
+	 *combining DataWrangler(mine), AE, and backend to test some methods
+	 */
+	@Test
+	public void IntegrationTest2(){
+		RedBlackTreeInterface RBTInstance = new RedBlackTreeAE<MovieInterface>();
+                MovieReaderInterface movie_reader = new MovieReaderDW();
+                MovieRankingInterface movierankerBD = new MovieRanking(movie_reader, RBTInstance);
+                try{
+                        movierankerBD.loadMoviesList("./data/test.txt");
+                } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                }
+		movierankerBD.removeByRatingRange(6.0, 8.0);
+		//after removing it should only contain 12 movies
+		assertThat(movierankerBD.getData(), containsString("12"));
+	}
 	/**
 	 *Junit test for algorithm engineer methods
 	 */
