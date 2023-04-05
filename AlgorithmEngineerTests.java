@@ -176,5 +176,4 @@ void testGetByRange() {
         // the right grandchild should be red
 
     }
-
 }
