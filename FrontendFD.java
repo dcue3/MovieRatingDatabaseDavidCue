@@ -111,7 +111,7 @@ public String menu() {
   menu += "4. Search for movies by rating \n";
   menu += "5. Print movie list \n";
   menu += "6. Clear movie list \n";
-  menu += "7. Display  movielist stats \n";
+  menu += "7. Display movie list stats \n";
   menu += "0. Quit \n";
   
   
