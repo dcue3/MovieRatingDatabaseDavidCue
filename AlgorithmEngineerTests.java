@@ -1,9 +1,11 @@
 import org.junit.jupiter.api.Test;
-
+import java.io.FileNotFoundException;
+import static org.hamcrest.CoreMatchers.containsString;
 import static org.junit.Assert.assertEquals;
 import static org.junit.jupiter.api.Assertions.*;
 import java.util.List;
 import java.util.ArrayList;
+import static org.junit.Assert.assertThat;
 
 public class AlgorithmEngineerTests extends RedBlackTreeAE {
 
@@ -176,4 +178,116 @@ void testGetByRange() {
         // the right grandchild should be red
 
     }
+/**
+ * This is an integration test that combines DataWrangler, AE, and the backend to test some methods.
+ */
+@Test
+public void IntegrationTest1() {
+    // Create an instance of RedBlackTreeAE to store movies.
+    RedBlackTreeInterface<MovieInterface> movieTree = new RedBlackTreeAE<MovieInterface>();
+
+    // Create an instance of MovieReaderDW to read movie data from a file.
+    MovieReaderInterface movieReader = new MovieReaderDW();
+
+    // Create an instance of MovieRanking that uses the movie reader and the Red-Black tree to rank movies by rating.
+    MovieRankingInterface movieRanker = new MovieRanking(movieReader, movieTree);
+
+    // Load a list of movies from a file and add them to the Red-Black tree.
+    try {
+        movieRanker.loadMoviesList("./data/test.txt");
+    } catch (FileNotFoundException e) {
+        e.printStackTrace();
+    }
+
+    // Get a list of movies that have a rating between 6.0 and 8.0 and check if it contains a specific movie.
+    String moviesByRating = movieRanker.getMoviesByRating(5.0, 9.0);
+System.out.print("moviesByRating");
+
+   String expectedMovie = "Title: Knives Out";
+    assertThat(moviesByRating, containsString(expectedMovie)); //the first movie with the 8.0 rating
+}
+
+
+
+/**
+ * This is an integration test that combines DataWrangler, AE, and the backend to test some methods.
+ * It checks if the getMoviesByRating method returns movies with a rating between 0.0 and 5.0.
+ */
+@Test
+public void IntegrationTest2() {
+    // Create an instance of RedBlackTreeAE to store movies.
+    RedBlackTreeInterface<MovieInterface> movieTree = new RedBlackTreeAE<MovieInterface>();
+
+    // Create an instance of MovieReaderDW to read movie data from a file.
+    MovieReaderInterface movieReader = new MovieReaderDW();
+
+    // Create an instance of MovieRanking that uses the movie reader and the Red-Black tree to rank movies by rating.
+    MovieRankingInterface movieRanker = new MovieRanking(movieReader, movieTree);
+
+    // Load a list of movies from a file and add them to the Red-Black tree.
+    try {
+        movieRanker.loadMoviesList("./data/test.txt");
+    } catch (FileNotFoundException e) {
+        e.printStackTrace();
+    }
+movieRanker.addMovie("Title: Titanic", 3.4, "Wed Anderson", 1, 2000);
+
+    // Get a list of movies that have a rating between 0.0 and 5.0 and check if it contains a specific movie.
+    String moviesByRating = movieRanker.getMoviesByRating(0.0, 5.0);
+    String expectedMovie = "Title: Titanic";
+    assertThat(moviesByRating, containsString(expectedMovie)); //the first movie with the 5.0 rating
+}
+
+    /**
+     *Junit test for codereview of Backend methods
+     *testing the loadData method and getData() method.
+     */
+    @Test
+    public void CodeReviewofBackendDeveloper(){
+        // Create an instance of RedBlackTreeAE to store movies.
+        RedBlackTreeInterface<MovieInterface> movieTree = new RedBlackTreeAE<MovieInterface>();
+
+        // Create an instance of MovieReaderDW to read movie data from a file.
+        MovieReaderInterface movieReader = new MovieReaderDW();
+
+        // Create an instance of MovieRanking that uses the movie reader and the Red-Black tree to rank movies by rating.
+        MovieRankingInterface movieRanker = new MovieRanking(movieReader, movieTree);
+
+        // Load a list of movies from a file and add them to the Red-Black tree.
+        try {
+            movieRanker.loadMoviesList("./data/test.txt");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        assertThat(movieRanker.getData(), containsString("Director: Todd Haynes"));
+
+    }
+/**
+ * test is used to test the readMoviesFromFile method of the MoviesReaderDW class, 
+ * and also to test the getTitle() and getRating() methods of the MovieDW class.
+ */
+@Test
+public void testReadMoviesFromFile() {
+    // Declare variables
+    List<MovieInterface> movies = null;
+    MovieReaderInterface movieReader = new MovieReaderDW();
+        try {
+        // Call the readMoviesFromFile method to read movie data from a test file
+        movies = movieReader.readMoviesFromFile("./data/test.txt");
+    } catch (FileNotFoundException e) {
+        // If the file is not found, print the stack trace
+        e.printStackTrace();
+    }
+
+    // Check if the readMoviesFromFile method correctly read all the data from the test.txt file
+    assertEquals(1000, movies.size()); // The test file has 1000 movies
+
+    // Check if the title of the first movie in the list matches the expected title
+    assertEquals("Pulp Fiction", movies.get(6).getTitle());
+
+    // Check if the rating of the first movie in the list matches the expected rating
+    assertEquals(Double.valueOf(8.9), movies.get(6).getRating());
+
+
+}
 }
